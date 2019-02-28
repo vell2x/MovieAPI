@@ -31,7 +31,7 @@ public class ApiService {
 	}
 	
 	public List<Movie> printCompleteList() {
-		String url = "https://api.stoplight.io/v1/versions/9WaNJfGpnnQ76opqe/export/oas.json";
+		String url = "https://api.themoviedb.org/3" ;
 		MovieResponse movie = restTemplate.getForObject(url, MovieResponse.class);
 		return movie.getMovie();
 	}

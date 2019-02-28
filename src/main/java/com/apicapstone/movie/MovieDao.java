@@ -5,14 +5,14 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Transactional
+//@Transactional
 public class MovieDao {
 
-	@PersistenceContext
-	private EntityManager em;
+	//@PersistenceContext
+	//private EntityManager em;
 
-	public List<Moive> findAll() {
-		return em.createQuery("from Moive", Movie.class).getResultList();
-	}
+	//public List<Moive> findAll() {
+		//return em.createQuery("from Moive", Movie.class).getResultList();
+	//}
 
 }
