@@ -24,7 +24,7 @@ public class MovieApiController {
 	public ModelAndView showResultKeyword() {
 			//@RequestParam("keyword") String keyword) {
 		//List<Movie> movie = apiService.getKeyword(keyword);
-		return new ModelAndView("movie"); //, "movie", movie);
+		return new ModelAndView("result"); //, "movie", movie);
 	}
 	
 	/*@RequestMapping("/result")
