@@ -14,9 +14,9 @@ public class MovieApiController {
 	@GetMapping("/movie")
 	public List<Movie> getMovie(@RequestParam(value = "title", required = false) String title) {
 		if (title == null || title.isEmpty()) {
-			return movieDao.findAll();
+			return null; //movieDao.findAll();
 		} else {
-			return movieDao.findByTitle(title);
+			return null; //movieDao.findByTitle(title);
 		}
 
 	}
