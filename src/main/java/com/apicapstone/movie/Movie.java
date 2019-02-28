@@ -1,38 +1,67 @@
 package com.apicapstone.movie;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Movie {
 	private String title;
-	private String rating;
-	private String genre;
-	private Integer length;
-	
+	private String character;
+	@JsonProperty("release_date")
+	private String releaseDate;
+	@JsonProperty("vote_count")
+	private Integer voteCount;
+	@JsonProperty("vote_average")
+	private Double voteAverage;
+	private Integer id;
+	private String overview;
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getRating() {
-		return rating;
+	public String getCharacter() {
+		return character;
 	}
-	public void setRating(String rating) {
-		this.rating = rating;
+	public void setCharacter(String character) {
+		this.character = character;
 	}
-	public String getGenre() {
-		return genre;
+	public String getReleaseDate() {
+		return releaseDate;
 	}
-	public void setGenre(String genre) {
-		this.genre = genre;
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
 	}
-	public Integer getLength() {
-		return length;
+	public Integer getVoteCount() {
+		return voteCount;
 	}
-	public void setLength(Integer length) {
-		this.length = length;
+	public void setVoteCount(Integer voteCount) {
+		this.voteCount = voteCount;
+	}
+	public Double getVoteAverage() {
+		return voteAverage;
+	}
+	public void setVoteAverage(Double voteAverage) {
+		this.voteAverage = voteAverage;
+	}
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getOverview() {
+		return overview;
+	}
+	public void setOverview(String overview) {
+		this.overview = overview;
 	}
 	@Override
 	public String toString() {
-		return "Movie [title=" + title + ", rating=" + rating + ", genre=" + genre + ", length=" + length + "]";
+		return "Movie [title=" + title + ", character=" + character + ", releaseDate=" + releaseDate + ", voteCount="
+				+ voteCount + ", voteAverage=" + voteAverage + ", id=" + id + ", overview=" + overview + "]";
 	}
-
+	
+	
 }

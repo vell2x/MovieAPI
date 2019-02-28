@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Transactional
+//@Transactional
 public class MovieDao {
 
 	@PersistenceContext
