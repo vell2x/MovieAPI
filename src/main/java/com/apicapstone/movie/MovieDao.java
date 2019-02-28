@@ -11,7 +11,7 @@ public class MovieDao {
 	@PersistenceContext
 	private EntityManager em;
 
-	public List<Moive> findAll() {
+	public List<Movie> findAll() {
 		return em.createQuery("from Moive", Movie.class).getResultList();
 	}
 
