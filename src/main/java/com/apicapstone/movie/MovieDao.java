@@ -7,8 +7,6 @@ import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 
-import co.grandcircus.restserver.entity.Product;
-
 @Repository
 @Transactional
 public class MovieDao {
