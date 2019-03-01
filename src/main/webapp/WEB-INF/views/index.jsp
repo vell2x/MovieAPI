@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<form action="/movie" ><input name="keyword"/><button>Submit</button></form>
 </body>
 </html>

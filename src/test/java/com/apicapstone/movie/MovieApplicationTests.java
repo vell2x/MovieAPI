@@ -18,7 +18,7 @@ public class MovieApplicationTests {
 
 	@Test
 	public void ApiServiceConnected01() {
-		List<Movie> movie = apiService.printCompleteList();
+		List<Movie> movie = apiService.searchByKeyword("day");
 		assertNotNull(movie);
 	}
 

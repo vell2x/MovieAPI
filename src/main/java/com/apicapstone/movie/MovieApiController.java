@@ -15,16 +15,20 @@ public class MovieApiController {
 	private ApiService apiService;
 
 	@RequestMapping("/movie")
-	public ModelAndView movie() {
-		List<Movie> movie = apiService.printCompleteList();
-		return new ModelAndView("movie", "movie", movie);
+	public ModelAndView movie(@RequestParam("keyword") String keyword) {
+		System.out.println(keyword);
+		List<Movie> movie = apiService.searchByKeyword(keyword);
+		return new ModelAndView("/result", "movies", movie);
+		//List<Movie> movie = apiService.printCompleteList();
+		//return new ModelAndView("movie"); //, "movie", movie);
 	}
 	
-	@RequestMapping("/result")
-	public ModelAndView showResultKeyword() {
-			//@RequestParam("keyword") String keyword) {
-		//List<Movie> movie = apiService.getKeyword(keyword);
-		return new ModelAndView("result"); //, "movie", movie);
+	@RequestMapping("/displayresult")
+	public ModelAndView showResultKeyword(
+			@RequestParam("keyword") String keyword) {
+		System.out.println(keyword);
+		List<Movie> movie = apiService.searchByKeyword(keyword);
+		return new ModelAndView("/result", "movies", movie);
 	}
 	
 	/*@RequestMapping("/result")

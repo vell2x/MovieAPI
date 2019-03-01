@@ -16,23 +16,25 @@ public class ApiService {
 	@Value("9daef3ac188ee8cf078562e2cf5e7709")
 	String myApiKey;
 	
-//	private RestTemplate restTemplateWithUserAgent;
-//	// This is an instance initialization block. It runs when a new instance of the
-//	// class is created--right before the constructor.
-//	{
-//		// This configures the restTemplateWithUserAgent to include a User-Agent header
-//		// with every HTTP request. Some of the APIs in this demo have a bug where
-//		// User-Agent is required.
-//		ClientHttpRequestInterceptor interceptor = (request, body, execution) -> {
-//			request.getHeaders().add(HttpHeaders.USER_AGENT, "Spring");
-//			return execution.execute(request, body);
-//		};
-//		restTemplateWithUserAgent = new RestTemplateBuilder().additionalInterceptors(interceptor).build();
-//	}
+	private RestTemplate restTemplateWithUserAgent;
+	// This is an instance initialization block. It runs when a new instance of the
+	// class is created--right before the constructor.
+	{
+		// This configures the restTemplateWithUserAgent to include a User-Agent header
+		// with every HTTP request. Some of the APIs in this demo have a bug where
+		// User-Agent is required.
+		ClientHttpRequestInterceptor interceptor = (request, body, execution) -> {
+			request.getHeaders().add(HttpHeaders.USER_AGENT, "Spring");
+			return execution.execute(request, body);
+		};
+		restTemplateWithUserAgent = new RestTemplateBuilder().additionalInterceptors(interceptor).build();
+	}
 	
-	public List<Movie> printCompleteList() {
-		String url = "https://api.themoviedb.org/3" ;
+	public List<Movie> searchByKeyword(String keyword) {
+		String url = "https://api.themoviedb.org/3/search/movie?api_key=" + myApiKey
+				+ "&language=en-US&query=" + keyword + "&page=1&include_adult=false";
+		
 		MovieResponse movie = restTemplate.getForObject(url, MovieResponse.class);
-		return movie.getMovie();
+		return movie.getResults();
 	}
 }
