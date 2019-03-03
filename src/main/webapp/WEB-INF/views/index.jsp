@@ -8,6 +8,12 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-	<form action="/movie" ><input name="keyword"/><button>Submit</button></form>
+	<p>
+	<form action="/movie" >
+	<label>Search by Keyword</label>
+	<input name="keyword"/>
+	<button>Submit</button>
+	</form>
+	</p>
 </body>
 </html>
