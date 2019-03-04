@@ -13,6 +13,9 @@ public class MovieApiController {
 
 	@Autowired
 	private ApiService apiService;
+	
+	@Autowired
+	private MovieDao movieDao;
 
 	@RequestMapping("/movie")
 	public ModelAndView movie(@RequestParam("keyword") String keyword) {
@@ -29,12 +32,18 @@ public class MovieApiController {
 		List<Movie> movie = apiService.searchByKeyword(keyword);
 		return new ModelAndView("result", "movies", movie);
 	}
-
-	/*
-	 * @RequestMapping("/result") public ModelAndView showResultReleaseDate(
-	 * 
-	 * @RequestParam("releaseDate") String releaseDate) { List<Movie> movie =
-	 * apiService.getReleaseDate(releaseDate); return new ModelAndView("movie",
-	 * "movie", movie); }
-	 */
+	
+	/*@RequestMapping("/result")
+	public ModelAndView showResultReleaseDate(
+			@RequestParam("releaseDate") String releaseDate) {
+		List<Movie> movie = apiService.getReleaseDate(releaseDate);
+		return new ModelAndView("movie", "movie", movie);
+	}*/
+	
+	@RequestMapping("/addFavToList")
+	public ModelAndView addFav(Movie movie) {
+		System.out.println(movie);
+		movieDao.create(movie);
+		return new ModelAndView("redirect:/result");
+}
 }

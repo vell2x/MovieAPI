@@ -42,4 +42,9 @@ public class Movie {
 	public void setOverview(String overview) {
 		this.overview = overview;
 	}
+
+	@Override
+	public String toString() {
+		return "Movie [title=" + title + ", releaseDate=" + releaseDate + ", overview=" + overview + "]";
+	}
 }

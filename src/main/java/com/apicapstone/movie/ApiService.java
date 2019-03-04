@@ -17,6 +17,7 @@ public class ApiService {
 		String url = "https://api.themoviedb.org/3/search/movie?api_key=" + myApiKey +
 				"&query=" + keyword;
 		System.out.println(url);
+
 		MovieResponse movie = restTemplate.getForObject(url, MovieResponse.class);
 		return movie.getResults();
 	}
