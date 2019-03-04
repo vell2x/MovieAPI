@@ -22,17 +22,21 @@
 			<tbody>
 				<c:forEach var="m" items="${movies}">
 				<tr>
+				<form action="/addFavToList" method="post">
+				
+				<input name="title" hidden=true value="${m.title}"/>
+				<input name="releaseDate" hidden=true value="${m.releaseDate}"/>
+				<input name="overview" hidden=true value="${m.overview}"/>
 					<td><a href="/description/{id}">${m.title}</a></td>
 					<td>${m.releaseDate}</td>
 					<td>${m.overview}</td>
-					<td><form>
-					  <fieldset>
-					    <span class="star-cb-group">
-					      <a href="/addFavToList">Favorite</a>
-					    </span>
-					  </fieldset>
-					</form></td>
-				</tr>
+					<td>
+					 	
+					      <button> Favorite</button>
+					    
+					</td>
+					</form>
+							</tr>
 				</c:forEach>
 			</tbody>
 		</table>

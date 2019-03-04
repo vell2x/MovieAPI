@@ -15,11 +15,16 @@ public class MovieDao {
 	private EntityManager em;
 
 	public List<Movie> findAll() {
-		return em.createQuery("from Moive", Movie.class).getResultList();
+		return em.createQuery("from Movie", Movie.class).getResultList();
 	}
 	
 	public void create(Movie movie) {
+	try{
 		em.persist(movie);
+		
+		}catch (Exception e) {
+			e.getStackTrace();
+		}
 	}
 	
 	public void delete(int id) {

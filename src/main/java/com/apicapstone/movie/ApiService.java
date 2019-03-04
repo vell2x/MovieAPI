@@ -21,4 +21,13 @@ public class ApiService {
 		MovieResponse movie = restTemplate.getForObject(url, MovieResponse.class);
 		return movie.getResults();
 	}
+	
+	public List<Movie> searchByRelease(String releaseDate) {
+		String url = "https://api.themoviedb.org/3/search/movie?api_key=" + myApiKey +
+				"&query=" + releaseDate;
+		System.out.println(url);
+
+		MovieResponse movie = restTemplate.getForObject(url, MovieResponse.class);
+		return movie.getResults();
+}
 }

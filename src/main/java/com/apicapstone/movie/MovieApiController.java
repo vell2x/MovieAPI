@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -33,17 +34,17 @@ public class MovieApiController {
 		return new ModelAndView("result", "movies", movie);
 	}
 	
-	/*@RequestMapping("/result")
+	@RequestMapping("/result")
 	public ModelAndView showResultReleaseDate(
 			@RequestParam("releaseDate") String releaseDate) {
-		List<Movie> movie = apiService.getReleaseDate(releaseDate);
+		List<Movie> movie = apiService.searchByRelease(releaseDate);
 		return new ModelAndView("movie", "movie", movie);
-	}*/
+	}
 	
-	@RequestMapping("/addFavToList")
+	@PostMapping("/addFavToList")
 	public ModelAndView addFav(Movie movie) {
 		System.out.println(movie);
 		movieDao.create(movie);
-		return new ModelAndView("redirect:/result");
+		return new ModelAndView("/index");
 }
 }

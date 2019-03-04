@@ -19,6 +19,20 @@ public class Movie {
 	private String releaseDate;
 	private String overview;
 	
+	
+	
+	public Movie(Long id, String title, String releaseDate, String overview) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.releaseDate = releaseDate;
+		this.overview = overview;
+	}
+	
+	public Movie() {
+		
+	}
+
 	public String getTitle() {
 		return title;
 	}

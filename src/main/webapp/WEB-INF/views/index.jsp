@@ -15,5 +15,19 @@
 	<button>Submit</button>
 	</form>
 	</p>
+	<p>
+	<form action="/movie" >
+	<label>Search by Movie Title</label>
+	<input name="keyword"/>
+	<button>Submit</button>
+	</form>
+	</p>
+	<p>
+	<form action="/movie" >
+	<label>Search by Release Date</label>
+	<input name="release"/>
+	<button>Submit</button>
+	</form>
+	</p>
 </body>
 </html>
