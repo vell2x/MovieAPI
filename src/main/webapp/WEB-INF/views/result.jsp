@@ -24,12 +24,12 @@
 					<td>${m.releaseDate}</td>
 					<td>${m.overview}</td>
 					<td><form>
-  <fieldset>
-    <span class="star-cb-group">
-      <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1"></label>
-    </span>
-  </fieldset>
-</form></td>
+					  <fieldset>
+					    <span class="star-cb-group">
+					      <a href="/addFavToList">Favorite</a>
+					    </span>
+					  </fieldset>
+					</form></td>
 				</tr>
 				</c:forEach>
 			</tbody>
